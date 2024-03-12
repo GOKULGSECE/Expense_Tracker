@@ -28,14 +28,14 @@ function Index({ onAddExpense, editExpenseData }) {
   }
 
   return (
-    <div className="input-container">
-      <form onSubmit={handleAddExpense}>
+    <div className="form-container">
+      <form onSubmit={handleAddExpense} className="expense-form">
         <input
           type="text"
           value={expensename}
           onChange={handleInputExpensename}
           className="input-field"
-          placeholder="enter expense name"
+          placeholder="Enter expense name"
         />
         <br />
         <input
@@ -46,7 +46,9 @@ function Index({ onAddExpense, editExpenseData }) {
           placeholder="Enter expense"
         />
         <br />
-        <button type="submit">{editExpenseData ? 'Save Edit' : 'Add Expense'}</button>
+        <button type="submit" className="expense-button">
+          {editExpenseData ? 'Save Edit' : 'Add Expense'}
+        </button>
       </form>
     </div>
   );

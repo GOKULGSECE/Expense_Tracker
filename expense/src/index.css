@@ -237,11 +237,11 @@ form .error {
   flex-grow: 1;
 }
 
-.expense-item.positive {
+.expenses-item.positive {
   border-right: 4px solid green;
 }
 
-.expense-item.negative {
+.expenses-item.negative {
   border-right: 4px solid red
 }
 
@@ -259,6 +259,9 @@ form .error {
   background-color: #f4f4f4;
   cursor: pointer;
 }
-h1,li{
+h1,li,h2{
   text-align: center;
+}
+div:hover{
+  border:green;
 }

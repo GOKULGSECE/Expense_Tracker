@@ -9,7 +9,6 @@ function App() {
 
   const onAddExpense = (expense, expensename) => {
     if (editExpenseData) {
-      // Handle editing existing expense
       const updatedExpenses = expenses.map((item) =>
         item.id === editExpenseData.id ? { ...item, expense, expensename } : item
       );
@@ -18,9 +17,8 @@ function App() {
     } else {
       const newExpense = { id: expenses.length + 1, expense, expensename };
       setExpenses((prevExpenses) => [...prevExpenses, newExpense]);
-    // }
+    }
   };
-}
 
   const onDeleteExpense = (id) => {
     const updatedExpenses = expenses.filter((expense) => expense.id !== id);
@@ -42,13 +40,15 @@ function App() {
         <ul>
           {expenses.map((item) => (
             <li key={item.id}>
-              ID: {item.id}, Expense: {item.expense}, Expensename: {item.expensename}
+              Usage: {item.id}, Title: {item.expensename}, Amount: {item.expense}
+              <br />
               <button onClick={() => onDeleteExpense(item.id)}>Delete</button>
+              <br />
               <button onClick={() => onEditExpense(item.id)}>Edit</button>
             </li>
           ))}
         </ul>
-        <App2 expenses={expenses} />
+        {/* <App2 expenses={expenses} />  */}
       </div>
     </div>
   );
